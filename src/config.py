@@ -11,7 +11,7 @@ def load_api() -> str:
      
      return api_key
 
-def load_prompts() -> str:
+def load_prompt_path() -> str:
      env_path = Path(__file__).resolve().parent.parent / ".env"
      load_dotenv(env_path)
      promptPath = os.getenv("CSV_INPUT_PATH", "data/prompts.csv")
