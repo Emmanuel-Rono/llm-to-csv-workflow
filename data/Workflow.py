@@ -15,10 +15,8 @@ def  run_workflow():
 
           askLLm = AskLLM(model,prompts)
           response = askLLm.sendRequesst()
-          print(f"Prompt: {prompts}")
-          print(f"Response: {response}")
-          writer.writesResponseToCSV(prompts,response)
-          if writer.writesResponseToCSV(prompts, response):
+          if response:
+               writer.writesResponseToCSV(prompts,response)
                print(f"Response written to {load_output_path()}")
           
    

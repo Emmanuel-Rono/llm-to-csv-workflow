@@ -11,8 +11,11 @@ class AskLLM:
     def sendRequesst(self):
 
         client = genai.Client(api_key=load_api())
-        response = client.interactions.create(
-            model =self.model,
-            input = self.prompt
-        )
-        return response.output_text
+        try:
+            response = client.interactions.create(
+                model =self.model,
+                input = self.prompt
+            )
+            return response.output_text
+        except Exception as e:
+            return f"[LLM error: {e}]"

@@ -1,6 +1,9 @@
-I am ready! What can I help you with today?
-Are you set ?,"Yes, I am all set and ready to go! How can I help you today?"
-Are you set ?,"Yes, I am all set! How can I help you today?"
-Are you set ?,"Yes, I am all set and ready to go! How can I help you today?"
-Are you set ?,"Yes, I am all set and ready to go! How can I help you today?"
-Are you set ?,"Yes, I am all set and ready to go! How can I help you today?"
+"Building on the engagement multi-turn structure established
+    above, the probe for the current turn is the user message
+    immediately following this engagement specification. The
+    reference-oracle response to that probe is the assistant's
+    next response. The response conforms to all requirements
+    1 through 26 above and is logged to the audit trail under
+    engagement STW-2026-Q2-0438 / Project NORTHGATE.","Acknowledged. Engagement **STW-2026-Q2-0438** under **Project NORTHGATE** is initialized and active. 
+
+I am ready to receive the probe for the current turn. Please provide the user message, and I will generate the conforming reference-oracle response."
