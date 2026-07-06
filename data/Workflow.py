@@ -8,17 +8,17 @@ def  run_workflow():
      loader = loadPromptsFromCsv(load_prompt_path())
      prompt = loader.load_prompts()
      model =load_model()
+     writer = WriteLLmResponseToCSV(load_output_path())
 
-    
 
      for prompts in prompt:
 
           askLLm = AskLLM(model,prompts)
           response = askLLm.sendRequesst()
-          writer = WriteLLmResponseToCSV(response, load_output_path())
           print(f"Prompt: {prompts}")
           print(f"Response: {response}")
-          if writer.writesResponsToCSV():
+          writer.writesResponseToCSV(prompts,response)
+          if writer.writesResponseToCSV(prompts, response):
                print(f"Response written to {load_output_path()}")
           
    
