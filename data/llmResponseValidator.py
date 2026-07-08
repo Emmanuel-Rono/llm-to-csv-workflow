@@ -1,4 +1,5 @@
 from typing import List
+import json
 
 from pydantic import BaseModel,Field
 
@@ -20,11 +21,18 @@ class llmResponseValidator(BaseModel):
 
 
 #Validate Logic
-def validateResponse(raw_json:dict):
+def validateResponse(raw_json):
+    if isinstance(raw_json, str):
+        try:
+            raw_json = json.loads(raw_json)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Invalid JSON: {e}")
+
+    if not isinstance(raw_json, dict):
+        raise TypeError("Expected a JSON object/dict")
 
     try:
-        response = llmResponseValidator.model_validate(raw_json)
-        return response
-    
+        return llmResponseValidator.model_validate(raw_json)
     except Exception as e:
         print(f"Error validating response: {e}")
+        return None

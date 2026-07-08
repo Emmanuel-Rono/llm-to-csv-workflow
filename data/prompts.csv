@@ -1,9 +1,4 @@
-Building on the engagement multi-turn structure established
-    above, the probe for the current turn is the user message
-    immediately following this engagement specification. The
-    reference-oracle response to that probe is the assistant's
-    next response. The response conforms to all requirements
-    1 through 26 above and is logged to the audit trail under
-    engagement STW-2026-Q2-0438 / Project NORTHGATE.
+Explain the use of pydantic
 
+How to seup pydantic settings
 
